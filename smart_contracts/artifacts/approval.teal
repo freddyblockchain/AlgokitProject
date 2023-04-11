@@ -1,0 +1,115 @@
+#pragma version 8
+intcblock 0 1
+txn NumAppArgs
+intc_0 // 0
+==
+bnz main_l6
+txna ApplicationArgs 0
+pushbytes 0xaf193ce7 // "create_asset(string,string,uint64,byte[32])void"
+==
+bnz main_l5
+txna ApplicationArgs 0
+pushbytes 0x524361ad // "get_asset(asset)void"
+==
+bnz main_l4
+err
+main_l4:
+txn OnCompletion
+intc_0 // NoOp
+==
+txn ApplicationID
+intc_0 // 0
+!=
+&&
+assert
+txna ApplicationArgs 1
+intc_0 // 0
+getbyte
+callsub getasset_1
+intc_1 // 1
+return
+main_l5:
+txn OnCompletion
+intc_0 // NoOp
+==
+txn ApplicationID
+intc_0 // 0
+!=
+&&
+assert
+txna ApplicationArgs 1
+store 0
+txna ApplicationArgs 2
+store 1
+txna ApplicationArgs 3
+btoi
+store 2
+txna ApplicationArgs 4
+store 3
+load 0
+load 1
+load 2
+load 3
+callsub createasset_0
+intc_1 // 1
+return
+main_l6:
+txn OnCompletion
+intc_0 // NoOp
+==
+bnz main_l8
+err
+main_l8:
+txn ApplicationID
+intc_0 // 0
+==
+assert
+intc_1 // 1
+return
+
+// create_asset
+createasset_0:
+proto 4 0
+itxn_begin
+pushint 3 // acfg
+itxn_field TypeEnum
+frame_dig -4
+extract 2 0
+itxn_field ConfigAssetName
+frame_dig -3
+extract 2 0
+itxn_field ConfigAssetURL
+global CurrentApplicationAddress
+itxn_field ConfigAssetManager
+global CurrentApplicationAddress
+itxn_field ConfigAssetClawback
+global CurrentApplicationAddress
+itxn_field ConfigAssetReserve
+global CurrentApplicationAddress
+itxn_field ConfigAssetFreeze
+frame_dig -2
+itxn_field ConfigAssetTotal
+frame_dig -1
+itxn_field ConfigAssetMetadataHash
+intc_0 // 0
+itxn_field ConfigAssetDecimals
+itxn_submit
+retsub
+
+// get_asset
+getasset_1:
+proto 1 0
+itxn_begin
+pushint 4 // axfer
+itxn_field TypeEnum
+frame_dig -1
+txnas Assets
+itxn_field XferAsset
+intc_1 // 1
+itxn_field AssetAmount
+txn Sender
+itxn_field AssetReceiver
+global CurrentApplicationAddress
+itxn_field AssetSender
+itxn_submit
+retsub

@@ -1,0 +1,42 @@
+{
+    "name": "EventTicket",
+    "methods": [
+        {
+            "name": "create_asset",
+            "args": [
+                {
+                    "type": "string",
+                    "name": "assetName"
+                },
+                {
+                    "type": "string",
+                    "name": "assetUrl"
+                },
+                {
+                    "type": "uint64",
+                    "name": "assetTotal"
+                },
+                {
+                    "type": "byte[32]",
+                    "name": "metadataHash"
+                }
+            ],
+            "returns": {
+                "type": "void"
+            }
+        },
+        {
+            "name": "get_asset",
+            "args": [
+                {
+                    "type": "asset",
+                    "name": "asset"
+                }
+            ],
+            "returns": {
+                "type": "void"
+            }
+        }
+    ],
+    "networks": {}
+}

@@ -18,7 +18,6 @@
 
   // TypeScript
   "editor.defaultFormatter": "esbenp.prettier-vscode",
-  
 
   // Python
   "python.analysis.indexing": true,
@@ -29,16 +28,16 @@
     // https://dev.to/eegli/quick-guide-to-python-formatting-in-vs-code-2040
     "editor.defaultFormatter": null
   },
-  "python.analysis.typeCheckingMode": "off",
+  "python.analysis.typeCheckingMode": "basic",
   "python.analysis.diagnosticSeverityOverrides": {
     "reportShadowedImports": "none"
   },
   "python.linting.enabled": true,
   "python.linting.lintOnSave": true,
-  
+
   "ruff.importStrategy": "fromEnvironment",
-  
-  "python.linting.pylintEnabled": false,
+
+  "python.linting.pylintEnabled": true,
   "python.linting.mypyEnabled": false,
   "mypy.configFile": "pyproject.toml",
   // set to empty array to use config from project
@@ -64,8 +63,8 @@
       }
     ]
   },
-  
+
   // On Windows, if execution policy is set to Signed (default) then it won't be able to activate the venv
   //  so instead let's set it to RemoteSigned for VS Code terminal
-  "terminal.integrated.shellArgs.windows": ["-ExecutionPolicy", "RemoteSigned"],
+  "terminal.integrated.shellArgs.windows": ["-ExecutionPolicy", "RemoteSigned"]
 }
