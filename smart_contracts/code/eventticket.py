@@ -18,7 +18,11 @@ app = bk.Application("EventTicket")
 
 @app.external
 def create_asset(
-    assetName: abi.String, assetUrl: abi.String, assetTotal: abi.Uint64, metadataHash: abi.StaticBytes[Literal[32]]
+    assetName: abi.String,
+    assetUrl: abi.String,
+    assetTotal: abi.Uint64,
+    managerAddress: abi.Address,
+    metadataHash: abi.StaticBytes[Literal[32]],
 ) -> Expr:
     return Seq(  # Seq is used to group a set of operations with only the last returning a value on the stack
         # Start to build the transaction builder
@@ -29,7 +33,7 @@ def create_asset(
                 TxnField.type_enum: TxnType.AssetConfig,
                 TxnField.config_asset_name: assetName.get(),
                 TxnField.config_asset_url: assetUrl.get(),
-                TxnField.config_asset_manager: Global.current_application_address(),
+                TxnField.config_asset_manager: managerAddress.get(),
                 TxnField.config_asset_clawback: Global.current_application_address(),
                 TxnField.config_asset_reserve: Global.current_application_address(),
                 TxnField.config_asset_freeze: Global.current_application_address(),

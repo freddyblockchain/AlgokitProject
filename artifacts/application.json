@@ -1,0 +1,87 @@
+{
+    "hints": {
+        "create_asset(string,string,uint64,address,byte[32])void": {
+            "call_config": {
+                "no_op": "CALL"
+            }
+        },
+        "get_asset(asset)void": {
+            "call_config": {
+                "no_op": "CALL"
+            }
+        }
+    },
+    "source": {
+        "approval": "I3ByYWdtYSB2ZXJzaW9uIDgKaW50Y2Jsb2NrIDAgMQp0eG4gTnVtQXBwQXJncwppbnRjXzAgLy8gMAo9PQpibnogbWFpbl9sNgp0eG5hIEFwcGxpY2F0aW9uQXJncyAwCnB1c2hieXRlcyAweDE4ZDA5ZjczIC8vICJjcmVhdGVfYXNzZXQoc3RyaW5nLHN0cmluZyx1aW50NjQsYWRkcmVzcyxieXRlWzMyXSl2b2lkIgo9PQpibnogbWFpbl9sNQp0eG5hIEFwcGxpY2F0aW9uQXJncyAwCnB1c2hieXRlcyAweDUyNDM2MWFkIC8vICJnZXRfYXNzZXQoYXNzZXQpdm9pZCIKPT0KYm56IG1haW5fbDQKZXJyCm1haW5fbDQ6CnR4biBPbkNvbXBsZXRpb24KaW50Y18wIC8vIE5vT3AKPT0KdHhuIEFwcGxpY2F0aW9uSUQKaW50Y18wIC8vIDAKIT0KJiYKYXNzZXJ0CnR4bmEgQXBwbGljYXRpb25BcmdzIDEKaW50Y18wIC8vIDAKZ2V0Ynl0ZQpjYWxsc3ViIGdldGFzc2V0XzEKaW50Y18xIC8vIDEKcmV0dXJuCm1haW5fbDU6CnR4biBPbkNvbXBsZXRpb24KaW50Y18wIC8vIE5vT3AKPT0KdHhuIEFwcGxpY2F0aW9uSUQKaW50Y18wIC8vIDAKIT0KJiYKYXNzZXJ0CnR4bmEgQXBwbGljYXRpb25BcmdzIDEKc3RvcmUgMAp0eG5hIEFwcGxpY2F0aW9uQXJncyAyCnN0b3JlIDEKdHhuYSBBcHBsaWNhdGlvbkFyZ3MgMwpidG9pCnN0b3JlIDIKdHhuYSBBcHBsaWNhdGlvbkFyZ3MgNApzdG9yZSAzCnR4bmEgQXBwbGljYXRpb25BcmdzIDUKc3RvcmUgNApsb2FkIDAKbG9hZCAxCmxvYWQgMgpsb2FkIDMKbG9hZCA0CmNhbGxzdWIgY3JlYXRlYXNzZXRfMAppbnRjXzEgLy8gMQpyZXR1cm4KbWFpbl9sNjoKdHhuIE9uQ29tcGxldGlvbgppbnRjXzAgLy8gTm9PcAo9PQpibnogbWFpbl9sOAplcnIKbWFpbl9sODoKdHhuIEFwcGxpY2F0aW9uSUQKaW50Y18wIC8vIDAKPT0KYXNzZXJ0CmludGNfMSAvLyAxCnJldHVybgoKLy8gY3JlYXRlX2Fzc2V0CmNyZWF0ZWFzc2V0XzA6CnByb3RvIDUgMAppdHhuX2JlZ2luCnB1c2hpbnQgMyAvLyBhY2ZnCml0eG5fZmllbGQgVHlwZUVudW0KZnJhbWVfZGlnIC01CmV4dHJhY3QgMiAwCml0eG5fZmllbGQgQ29uZmlnQXNzZXROYW1lCmZyYW1lX2RpZyAtNApleHRyYWN0IDIgMAppdHhuX2ZpZWxkIENvbmZpZ0Fzc2V0VVJMCmZyYW1lX2RpZyAtMgppdHhuX2ZpZWxkIENvbmZpZ0Fzc2V0TWFuYWdlcgpnbG9iYWwgQ3VycmVudEFwcGxpY2F0aW9uQWRkcmVzcwppdHhuX2ZpZWxkIENvbmZpZ0Fzc2V0Q2xhd2JhY2sKZ2xvYmFsIEN1cnJlbnRBcHBsaWNhdGlvbkFkZHJlc3MKaXR4bl9maWVsZCBDb25maWdBc3NldFJlc2VydmUKZ2xvYmFsIEN1cnJlbnRBcHBsaWNhdGlvbkFkZHJlc3MKaXR4bl9maWVsZCBDb25maWdBc3NldEZyZWV6ZQpmcmFtZV9kaWcgLTMKaXR4bl9maWVsZCBDb25maWdBc3NldFRvdGFsCmZyYW1lX2RpZyAtMQppdHhuX2ZpZWxkIENvbmZpZ0Fzc2V0TWV0YWRhdGFIYXNoCmludGNfMCAvLyAwCml0eG5fZmllbGQgQ29uZmlnQXNzZXREZWNpbWFscwppdHhuX3N1Ym1pdApyZXRzdWIKCi8vIGdldF9hc3NldApnZXRhc3NldF8xOgpwcm90byAxIDAKaXR4bl9iZWdpbgpwdXNoaW50IDQgLy8gYXhmZXIKaXR4bl9maWVsZCBUeXBlRW51bQpmcmFtZV9kaWcgLTEKdHhuYXMgQXNzZXRzCml0eG5fZmllbGQgWGZlckFzc2V0CmludGNfMSAvLyAxCml0eG5fZmllbGQgQXNzZXRBbW91bnQKdHhuIFNlbmRlcgppdHhuX2ZpZWxkIEFzc2V0UmVjZWl2ZXIKZ2xvYmFsIEN1cnJlbnRBcHBsaWNhdGlvbkFkZHJlc3MKaXR4bl9maWVsZCBBc3NldFNlbmRlcgppdHhuX3N1Ym1pdApyZXRzdWI=",
+        "clear": "I3ByYWdtYSB2ZXJzaW9uIDgKcHVzaGludCAwIC8vIDAKcmV0dXJu"
+    },
+    "state": {
+        "global": {
+            "num_byte_slices": 0,
+            "num_uints": 0
+        },
+        "local": {
+            "num_byte_slices": 0,
+            "num_uints": 0
+        }
+    },
+    "schema": {
+        "global": {
+            "declared": {},
+            "reserved": {}
+        },
+        "local": {
+            "declared": {},
+            "reserved": {}
+        }
+    },
+    "contract": {
+        "name": "EventTicket",
+        "methods": [
+            {
+                "name": "create_asset",
+                "args": [
+                    {
+                        "type": "string",
+                        "name": "assetName"
+                    },
+                    {
+                        "type": "string",
+                        "name": "assetUrl"
+                    },
+                    {
+                        "type": "uint64",
+                        "name": "assetTotal"
+                    },
+                    {
+                        "type": "address",
+                        "name": "managerAddress"
+                    },
+                    {
+                        "type": "byte[32]",
+                        "name": "metadataHash"
+                    }
+                ],
+                "returns": {
+                    "type": "void"
+                }
+            },
+            {
+                "name": "get_asset",
+                "args": [
+                    {
+                        "type": "asset",
+                        "name": "asset"
+                    }
+                ],
+                "returns": {
+                    "type": "void"
+                }
+            }
+        ],
+        "networks": {}
+    },
+    "bare_call_config": {
+        "no_op": "CREATE"
+    }
+}

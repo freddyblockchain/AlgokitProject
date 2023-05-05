@@ -17,6 +17,10 @@
                     "name": "assetTotal"
                 },
                 {
+                    "type": "address",
+                    "name": "managerAddress"
+                },
+                {
                     "type": "byte[32]",
                     "name": "metadataHash"
                 }

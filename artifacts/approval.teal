@@ -5,7 +5,7 @@ intc_0 // 0
 ==
 bnz main_l6
 txna ApplicationArgs 0
-pushbytes 0xaf193ce7 // "create_asset(string,string,uint64,byte[32])void"
+pushbytes 0x18d09f73 // "create_asset(string,string,uint64,address,byte[32])void"
 ==
 bnz main_l5
 txna ApplicationArgs 0
@@ -46,10 +46,13 @@ btoi
 store 2
 txna ApplicationArgs 4
 store 3
+txna ApplicationArgs 5
+store 4
 load 0
 load 1
 load 2
 load 3
+load 4
 callsub createasset_0
 intc_1 // 1
 return
@@ -69,17 +72,17 @@ return
 
 // create_asset
 createasset_0:
-proto 4 0
+proto 5 0
 itxn_begin
 pushint 3 // acfg
 itxn_field TypeEnum
-frame_dig -4
+frame_dig -5
 extract 2 0
 itxn_field ConfigAssetName
-frame_dig -3
+frame_dig -4
 extract 2 0
 itxn_field ConfigAssetURL
-global CurrentApplicationAddress
+frame_dig -2
 itxn_field ConfigAssetManager
 global CurrentApplicationAddress
 itxn_field ConfigAssetClawback
@@ -87,7 +90,7 @@ global CurrentApplicationAddress
 itxn_field ConfigAssetReserve
 global CurrentApplicationAddress
 itxn_field ConfigAssetFreeze
-frame_dig -2
+frame_dig -3
 itxn_field ConfigAssetTotal
 frame_dig -1
 itxn_field ConfigAssetMetadataHash
